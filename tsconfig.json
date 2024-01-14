@@ -8,6 +8,12 @@
         "allowJs": true,
         "moduleResolution": "node",
         "allowSyntheticDefaultImports" : true,
-        "esModuleInterop" : true
+        "esModuleInterop" : true,
+        // 项目根路径
+        "baseUrl": "./",
+        // 别名映射
+        "paths": {
+            "@src/*": ["src/*"]
+        }
     }
 }
