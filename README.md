@@ -98,8 +98,9 @@ resolve: {
 }
 #### path包：
 + 文档：https://www.nodeapp.cn/path.html#path_path_resolve_paths
-
-
+#### 多页面打包重复配置简化
+把webpack多入口的配置看懂，配两个看看
+再用js来简化处理相同的逻辑即可
 
 ### 单页面
 

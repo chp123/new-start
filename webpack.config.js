@@ -2,20 +2,39 @@ const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+const glob = require('glob')
+const getEntries = (globPath, pathDir) => {
+    let files = glob.sync(globPath);
+    let entries = {},
+        entry, dirname, basename, pathname, extname;
+    for (var i = 0; i < files.length; i++) {
+        entry = files[i];
+        dirname = path.dirname(entry);
+        extname = path.extname(entry);
+        basename = path.basename(entry, extname);
+        pathname = path.join(dirname, basename);
+        entries[basename] = pathname + pathDir;
+    }
+    return entries;
+}
+
+const getHtmls = (entries) => {
+    var HtmlPlugin = [];
+    for (var key in entries) {
+        HtmlPlugin.push(new HtmlWebpackPlugin({
+            template: './public/index.html',
+            filename: `${key}.html`,
+            chunks: [key]
+        }))
+    }
+    return HtmlPlugin
+}
+const entries = getEntries(path.resolve('pages/*'), '/index.tsx');
 module.exports = {
-    entry: {
-        app: {
-            import: './pages/app/index.tsx',
-            filename: '[name].js' //这里的文件名输出优先级高于下面的output
-        },
-        index: {
-            import: './pages/index/index.tsx',
-            filename: '[name].js'
-        },
-    },
+    entry: entries,
     output: {
         path: path.join(__dirname, '/dist'),
-        filename: '[name].bundle.js',
+        filename: '[name].[hash:4].js',
         clean: true,
     },
     devtool: 'source-map',
@@ -47,21 +66,13 @@ module.exports = {
         }
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            template: './public/index.html',
-            filename: 'index.html',
-            chunks: ['index']
-        }),
-        new HtmlWebpackPlugin({
-            template: './public/index.html',
-            filename: 'app.html',
-            chunks: ['app']
-        }),
         new MiniCssExtractPlugin({
-            filename: '[name].css'
-        })
+            filename: '[name].[hash:4].css'
+        }),
+        ...getHtmls(entries)
     ],
     devServer: {
         port: 9000
     }
 }
+
