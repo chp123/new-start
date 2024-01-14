@@ -1,7 +1,7 @@
 # new-start
 新的开始，重头来过
 ### 关于css
-####1、postcss
+1、postcss
 + 学习网址：https://www.postcss.com.cn
 + 简单来讲：postcss是转换css的工具，具有很多插件，比如：autoprefixer可以自动补全浏览器前缀；postcss-pxtorem自动把px转化为rem
 + 效果：
@@ -58,8 +58,41 @@ a{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-web
 
 
 ### 关于babel
++ 学习网址：https://babeljs.io/docs/
+babel不做类型检查
 
 ### 关于polyfill
 + 什么是polyfill
 抚平不同浏览器之间对js实现的差异。
 https://www.jianshu.com/p/7562b8b589f3
+
+
+### 关于sourcemap
+
+### 多页面
+#### entry配置：https://webpack.docschina.org/concepts/entry-points#root
+#### HtmlWebpackPlugin
++ 作用：生成html文件；
++ 文档：https://webpack.docschina.org/plugins/html-webpack-plugin/#root
+#### webpack-dev-server
+能配置端口、代理等
++ 文档：https://webpack.docschina.org/configuration/dev-server/#root
++ 访问提示：http://localhost:8080/webpack-dev-server
++ 这个更清楚：https://www.jianshu.com/p/b164515d7502
+#### 路径别名配置：
+#### path包：
+
+
+
+### 单页面
+
+### h5
+
+### pc
+
+### axios
+
+### 八股文
+
+### 工具类
+
