@@ -103,8 +103,16 @@ resolve: {
 再用js来简化处理相同的逻辑即可
 
 ### 单页面
++ react-router和react-router-dom的区别
+react-router:实现了路由的核心功能
+react-router-dom:基于react-router，加入了在浏览器运行环境下的一些功能，例如Link组件、BrowserRouter和HashRouter组件。
++ 文档(6和5的用法不太一样)： https://reactrouter.com/en/main/start/overview 
+https://blog.csdn.net/samscat/article/details/124691407
+
+
 
 ### h5
++ 分辨率
 
 ### pc
 

@@ -1,10 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from '../../src/pages/app/index'
+import Layout from '@src/components/layout'
 const root = ReactDOM.createRoot(document.getElementById('root'))
-document.title = '首页'
 root.render(
   <React.StrictMode>
-    <App a={1} b={'qwe'} />
+    <Layout />
   </React.StrictMode>
 )
