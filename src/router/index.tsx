@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Routes, redirect } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import App from '@src/pages/app/index'
 import Index from '@src/pages/index'
 

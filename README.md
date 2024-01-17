@@ -62,6 +62,8 @@ a{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-web
 ### 关于babel
 + 学习网址：https://babeljs.io/docs/
 babel不做类型检查
++ babel-polyfill
+
 
 ### 关于polyfill
 + 什么是polyfill
@@ -108,11 +110,16 @@ react-router:实现了路由的核心功能
 react-router-dom:基于react-router，加入了在浏览器运行环境下的一些功能，例如Link组件、BrowserRouter和HashRouter组件。
 + 文档(6和5的用法不太一样)： https://reactrouter.com/en/main/start/overview 
 https://blog.csdn.net/samscat/article/details/124691407
++ react-router-config: 添加了 react-router-config 之后，我们就可以写我们熟悉的静态路由了。同时，利用它，可以将路由配置分散在各个组件中，最后使用renderRoutes将分散的路由片段在根组件合并，渲染即可。但是不适用于6版本的react-router-dom
 
+### redux
++ 文档：https://www.tkcnn.com/redux/advanced/UsageWithReactRouter.html
++ 学习文档：https://juejin.cn/post/7239358009863897149?searchId=20240116232411637BC217A7F60FC8543C
+https://juejin.cn/post/6844903998139400200?searchId=202401160054325DED5740A89DC644265E#heading-18
 
 
 ### h5
-+ 分辨率
++ 分辨率：
 
 ### pc
 
