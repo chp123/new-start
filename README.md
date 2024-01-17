@@ -116,6 +116,18 @@ https://blog.csdn.net/samscat/article/details/124691407
 + 文档：https://www.tkcnn.com/redux/advanced/UsageWithReactRouter.html
 + 学习文档：https://juejin.cn/post/7239358009863897149?searchId=20240116232411637BC217A7F60FC8543C
 https://juejin.cn/post/6844903998139400200?searchId=202401160054325DED5740A89DC644265E#heading-18
++ redux 和 react-redux
+redux是一个专门用来做状态管理的js库（不是react插件）
+为了方便使用，Redux 的作者封装了一个 React 专用的库 React-Redux 这两个仓库的区别如下
+redux需要监听store变化更新视图，利用store.subscribe(() => { this.forceUpdate(); })；react-redux不需要监听；
+react-redux将组件分为UI组件、容器组件；关于redux的操作都在容器组件中，单一职责原则；并通过connect(mapStateToProps, mapDispatchToProps)()连接容器组件与UI组件；redux没有区分；
++ React 组件如何获取 redux store 中的状态
+引入 store 文件，然后直接在组件里面调用 store.getState() 方法
+引入 connect 方法，然后用 mapStateToProps 把状态映射到组件的 props 上面
++ redux 和 react-router结合
+
+
+
 
 
 ### h5
@@ -124,6 +136,7 @@ https://juejin.cn/post/6844903998139400200?searchId=202401160054325DED5740A89DC6
 ### pc
 
 ### axios
+
 
 ### 八股文
 
