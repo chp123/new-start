@@ -2,7 +2,7 @@
 
 .component-head {
     width: 100%;
-    height: 80px;
+    height: $headHeight;
     @include flex-row();
     @include flex-between-center();
     padding: 0 20px;
@@ -14,8 +14,10 @@
         background: white;
         @include flex-row();
         @include flex-center();
+        cursor: pointer;
     }
     .right {
         @include flex-row();
+        @include flex-center();
     }
 }

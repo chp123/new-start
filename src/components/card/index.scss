@@ -1,28 +1,47 @@
 @import '../../style/mixin.scss';
 
+$width: 180px;
+
+@mixin height() {
+    height: (random(10) * 5 + 200) + px;
+}
+
 .component-card {
+    width: $width;
+    margin: 0 5px;
+    margin-bottom: 10px;
     .img {
-        width: 200px;
-        height: 300px;
-        background: blue;
+        width: $width;
         border-radius: 15px;
+        border: 1px solid #999;
+        cursor: pointer;
     }
     .title {
         font-size: 13px;
         font-weight: 500;
+        @include ellipsis(2);
+        cursor: pointer;
     }
     .author {
         @include flex-row();
         @include flex-between-center();
+        margin-top: 3px;
         .left {
+            @include flex-row();
+            @include flex-start-center();
             .img {
                 width: 20px;
                 height: 20px;
                 border-radius: 50%;
-                background: black;
+            }
+            .name {
+                color: #333;
+                margin-left: 5px;
+                font-size: 12px;
             }
         }
         .right {
+            font-size: 12px;
         }
     }
 }

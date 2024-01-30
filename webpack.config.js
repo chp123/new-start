@@ -37,7 +37,7 @@ module.exports = {
         filename: '[name].[hash:4].js',
         clean: true,
     },
-    // devtool: 'source-map',
+    devtool: 'source-map',
     module: {
         rules: [
             // {
@@ -67,7 +67,7 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: '[name].[hash:4].css'
+            filename: '[name].css'
         }),
         ...getHtmls(entries)
     ],

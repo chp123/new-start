@@ -2,4 +2,5 @@
 
 .component-waterfall {
     @include flex-row();
+    flex-wrap: wrap;
 }

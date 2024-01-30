@@ -1,3 +1,5 @@
+$navbarWidth: 100px;
+$headHeight: 80px;
 @mixin flex-row() {
     display: flex;
     flex-direction: row;
@@ -26,4 +28,14 @@
 @mixin flex-between-center() {
     justify-content: space-between;
     align-items: center;
+}
+
+@mixin ellipsis($row: 1) {
+    text-overflow: ellipsis;
+    -webkit-line-clamp: $row;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    word-wrap: break-word;
+    word-break: break-all;
 }
