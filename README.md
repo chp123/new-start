@@ -142,3 +142,12 @@ react-redux将组件分为UI组件、容器组件；关于redux的操作都在�
 
 ### 工具类
 
+### 格式化
+问题：prettier vscode的插件和npm包是什么关系？
+答案：https://qa.1r1g.com/sf/ask/4334813031/
+简而言之：不安装npm包，vscode的插件也可以工作；安装npm包并写配置，可以保证每个开发者的规则一致；
+这个更清晰：https://juejin.cn/post/6990929456382607374
+
+
+### lint
+
