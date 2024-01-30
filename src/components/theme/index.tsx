@@ -1,11 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import './index.scss'
 
 const Theme = (props: any) => {
     const { theme, onLight, onDark } = props;
     return (
-        <div>
-            <h1>主题色: {theme}</h1>
+        <div className='component-theme'>
             <button onClick={onLight}>浅色</button>
             <button onClick={onDark}>深色</button>
         </div>

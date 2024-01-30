@@ -1,13 +1,13 @@
 @import '../../style/base.scss';
 @import '../../style/theme.scss';
+@import '../../style/mixin.scss';
 
 .component-layout {
   width: 100%;
   height: 100%;
 
   .content {
-    display: flex;
-    flex-direction: row;
+    @include flex-row();
     height: calc(100% - 80px);
   }
 
