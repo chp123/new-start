@@ -10,6 +10,7 @@ $width: 180px;
     width: $width;
     margin: 0 5px;
     margin-bottom: 10px;
+    break-inside: avoid;
     .img {
         width: $width;
         border-radius: 15px;

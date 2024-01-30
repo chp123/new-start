@@ -1,6 +1,7 @@
 @import '../../style/mixin.scss';
 
 .component-waterfall {
-    @include flex-row();
-    flex-wrap: wrap;
+    column-count: 6;
+    column-gap: 10px;
+    break-inside: avoid;
 }
