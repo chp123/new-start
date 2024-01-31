@@ -1,7 +1,50 @@
-.light {
-    background: goldenrod;
+// 浅色
+$main_light: #fff;
+$menu_active_light: #bcbcb8;
+$menu_font_light: #111;
+
+// 深色
+$main_dark: black;
+$menu_active_dark: #ffd700;
+$menu_font_dark: #fff;
+
+// 粉色
+$main_pink: #ee98b6;
+$menu_active_pink: #fd6cc8;
+$menu_font_pink: #fff;
+
+.theme-light {
+    background: $main_light;
+    color: $menu_font_light;
+    a,
+    span {
+        color: $menu_font_light;
+    }
+    .active {
+        background: $menu_active_light;
+    }
 }
 
-.dark {
-    background: black;
+.theme-dark {
+    background: $main_dark;
+    color: $menu_font_dark;
+    a,
+    span {
+        color: $menu_font_dark;
+    }
+    .active {
+        background: $menu_active_dark;
+    }
+}
+
+.theme-pink {
+    background: $main_pink;
+    color: $menu_font_pink;
+    a,
+    span {
+        color: $menu_font_pink;
+    }
+    .active {
+        background: $menu_active_pink;
+    }
 }

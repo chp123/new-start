@@ -1,5 +1,9 @@
+@import './base.scss';
+@import './theme.scss';
+
 $navbarWidth: 100px;
 $headHeight: 80px;
+
 @mixin flex-row() {
     display: flex;
     flex-direction: row;

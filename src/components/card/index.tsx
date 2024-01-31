@@ -1,24 +1,55 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './index.scss';
 import classnames from 'classnames';
+import { Button, Modal } from 'antd';
 
-const Card = () => {
-    const img = 'https://t7.baidu.com/it/u=1951548898,3927145&fm=193&f=GIF';
-    const img1 = 'https://t7.baidu.com/it/u=4254919379,3719403362&fm=193&f=GIF';
+interface IProps {
+    img: string;
+    title: string;
+    owner: string;
+    name: string;
+    like: number;
+}
+
+const Card = (props: IProps) => {
+    const { img, title, owner, name, like } = props;
+    const [visible, setVisible] = useState(false);
     let h = Math.random() * 100 + 200 + 'px';
+    const handleDialog = () => {
+        setVisible(true);
+    };
+    const handleDialogClose = () => {
+        setVisible(false);
+    };
     return (
         <div className={classnames('component-card')}>
-            <img className='img' src={img} style={{ height: h }}></img>
-            <div className='title'>
-                小红书小卡片小红书小卡片小红书小卡片小红书小卡片片小红书小卡片片小红书小卡片
+            <img onClick={handleDialog} className='img' src={img} style={{ height: h }}></img>
+            <div onClick={handleDialog} className='title'>
+                {title}
             </div>
             <div className='author'>
                 <div className='left'>
-                    <img src={img1} className='img'></img>
-                    <span className='name'>哈哈</span>
+                    <img src={owner} className='img'></img>
+                    <span className='name'>{name}</span>
                 </div>
-                <div className='right'>50</div>
+                <div className='right'>{like}</div>
             </div>
+            <Modal className='card-modal' width={800} open={visible} onCancel={handleDialogClose}>
+                <img className='img' src={img}></img>
+                <div className='right-block'>
+                    <div className='owner'>
+                        <div className='left'>
+                            <img src={owner} className='img'></img>
+                            <span className='name'>{name}</span>
+                        </div>
+                        <Button>关注</Button>
+                    </div>
+                    <div className='content'>
+                        <div className='title'>{title}</div>
+                        <div className='time'>2024-1-1</div>
+                    </div>
+                </div>
+            </Modal>
         </div>
     );
 };

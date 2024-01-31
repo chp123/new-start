@@ -46,3 +46,65 @@ $width: 180px;
         }
     }
 }
+
+.card-modal {
+    .ant-modal-content {
+        padding: 0;
+        overflow: hidden;
+        .ant-modal-close {
+            top: -30px;
+            left: -30px;
+            color: #333;
+            font-size: 14px;
+        }
+        .ant-modal-close-x {
+            font-size: 25px;
+        }
+        .ant-modal-body {
+            @include flex-row();
+            .img {
+                width: 55%;
+                height: 100%;
+            }
+            .right-block {
+                padding: 20px;
+                width: 45%;
+                .owner {
+                    @include flex-row();
+                    @include flex-between-center();
+                    margin-bottom: 20px;
+                    .left {
+                        @include flex-row();
+                        @include flex-start-center();
+                        .img {
+                            width: 30px;
+                            height: 30px;
+                            border-radius: 50%;
+                        }
+                        .name {
+                            color: #333;
+                            margin-left: 5px;
+                            font-size: 14px;
+                        }
+                    }
+                }
+                .content {
+                    .title {
+                        font-size: 15px;
+                        font-weight: 500;
+                        color: #111;
+                        line-height: 1;
+                    }
+                    .time {
+                        font-size: 13px;
+                        color: #666;
+                        margin-top: 5px;
+                    }
+                }
+            }
+        }
+        .ant-modal-footer {
+            display: none;
+        }
+    }
+}

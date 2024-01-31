@@ -1,7 +1,7 @@
 @import '../../style/mixin.scss';
 
 .component-waterfall {
+    width: 100%;
     column-count: 6;
     column-gap: 10px;
-    break-inside: avoid;
 }
