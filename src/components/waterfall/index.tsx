@@ -2,20 +2,10 @@ import React, { useEffect, useState } from 'react';
 import './index.scss';
 import classnames from 'classnames';
 import Card from '../card';
-import IMAGES from '@src/constants/imgs';
 import { debounce } from '../../tools';
 
 const WaterFall = (props: any) => {
     let [columnCount, setColumnCount] = useState(0);
-    let arr = new Array(10);
-    arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-    const cardData = {
-        img: IMAGES.CARD,
-        title: '小红书小卡片小红书小卡片小红书小卡片小红书小卡片片小红书小卡片片小红书小卡片',
-        name: '想飞的蜗牛',
-        owner: IMAGES.OWNER,
-        like: 300,
-    };
     const getCount = () => {
         const wf = document.querySelector('.component-waterfall') as any;
         const offsetWidth = wf.offsetWidth;
@@ -31,8 +21,8 @@ const WaterFall = (props: any) => {
     }, []);
     return (
         <div className={classnames('component-waterfall')} style={{ columnCount: columnCount }}>
-            {arr.map((item, index) => {
-                return <Card key={index} {...cardData} />;
+            {props.data.map((item, index) => {
+                return <Card key={index} {...item} />;
             })}
         </div>
     );

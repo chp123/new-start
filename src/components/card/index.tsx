@@ -9,10 +9,11 @@ interface IProps {
     owner: string;
     name: string;
     like: number;
+    time: any;
 }
 
 const Card = (props: IProps) => {
-    const { img, title, owner, name, like } = props;
+    const { img, title, owner, name, like, time } = props;
     const [visible, setVisible] = useState(false);
     let h = Math.random() * 100 + 200 + 'px';
     const handleDialog = () => {
@@ -46,7 +47,7 @@ const Card = (props: IProps) => {
                     </div>
                     <div className='content'>
                         <div className='title'>{title}</div>
-                        <div className='time'>2024-1-1</div>
+                        <div className='time'>{time}</div>
                     </div>
                 </div>
             </Modal>
