@@ -3,12 +3,14 @@ import './index.scss';
 import WaterFall from '@src/components/waterfall';
 import Category from '@src/components/category';
 import { getRequest, IReponse } from '@src/request/index';
+import Loading from '@src/components/loading';
 import '@src/mock';
 
 const Index = () => {
     let [curCatNo, setCurCatNo] = useState(1);
     let [catData, setCatData] = useState([]);
     let [cardData, setCardData] = useState([]);
+    let [loading, setLoading] = useState(false);
     useEffect(() => {
         getData1();
     }, []);
@@ -16,10 +18,16 @@ const Index = () => {
         getData();
     }, [curCatNo]);
     const getData = () => {
-        getRequest('/test/card').then((res: IReponse) => {
-            console.log('===res===', res);
-            setCardData(res.data);
-        });
+        setLoading(true);
+        getRequest('/test/card')
+            .then((res: IReponse) => {
+                console.log('===res===', res);
+                setCardData(res.data);
+                setLoading(false);
+            })
+            .catch(() => {
+                setLoading(false);
+            });
     };
     const getData1 = () => {
         getRequest('/test/category').then((res: IReponse) => {
@@ -33,10 +41,8 @@ const Index = () => {
     return (
         <div className='page-index'>
             <Category data={catData} curCatNo={curCatNo} onClick={handleChangeCategory} />
+            <Loading loading={loading}></Loading>
             <WaterFall data={cardData} />
-
-            <a href='./app.html'>去app</a>
-            <a href='./single.html#/app'>去单页面</a>
         </div>
     );
 };

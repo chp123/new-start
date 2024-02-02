@@ -10,6 +10,7 @@ const Navbar = (props: any) => {
         <div className={classnames('component-navbar', `theme-${theme.toString().toLowerCase()}`)}>
             <NavLink to={'index'}>首页</NavLink>
             <NavLink to={'app'}>app</NavLink>
+            <NavLink to={'documents'}>文档</NavLink>
         </div>
     );
 };

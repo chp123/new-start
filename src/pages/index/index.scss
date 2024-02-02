@@ -1,1 +1,10 @@
-.page-index{}
+@import '../../style/mixin.scss';
+
+.page-index{
+    .loading{
+        width: 100%;
+        height: 40px;
+        @include flex-row();
+        @include flex-center();
+    }
+}

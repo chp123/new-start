@@ -34,6 +34,11 @@ $headHeight: 80px;
     align-items: center;
 }
 
+@mixin flex-end-center() {
+    justify-content: flex-end;
+    align-items: center;
+}
+
 @mixin ellipsis($row: 1) {
     text-overflow: ellipsis;
     -webkit-line-clamp: $row;

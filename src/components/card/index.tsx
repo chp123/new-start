@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import './index.scss';
 import classnames from 'classnames';
-import { Button, Modal } from 'antd';
+import { Button, Modal, Input } from 'antd';
+import { HeartOutlined, HeartTwoTone, StarOutlined, MessageOutlined } from '@ant-design/icons';
+import Image from '../image';
+import Comment from './comment';
 
 interface IProps {
     img: string;
@@ -24,7 +27,7 @@ const Card = (props: IProps) => {
     };
     return (
         <div className={classnames('component-card')}>
-            <img onClick={handleDialog} className='img' src={img} style={{ height: h }}></img>
+            <Image onClick={handleDialog} className='img' src={img}></Image>
             <div onClick={handleDialog} className='title'>
                 {title}
             </div>
@@ -33,7 +36,10 @@ const Card = (props: IProps) => {
                     <img src={owner} className='img'></img>
                     <span className='name'>{name}</span>
                 </div>
-                <div className='right'>{like}</div>
+                <div className='right'>
+                    <HeartOutlined />
+                    <span>{like}</span>
+                </div>
             </div>
             <Modal className='card-modal' width={800} open={visible} onCancel={handleDialogClose}>
                 <img className='img' src={img}></img>
@@ -48,6 +54,9 @@ const Card = (props: IProps) => {
                     <div className='content'>
                         <div className='title'>{title}</div>
                         <div className='time'>{time}</div>
+                    </div>
+                    <div className='footer'>
+                        <Comment like={like} />
                     </div>
                 </div>
             </Modal>
