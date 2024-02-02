@@ -25,7 +25,7 @@ const Image: FC<ImageProps> = ({ pending, src, fail, className, ...other }) => {
         };
         img.onerror = () => {
             if (imgRef.current) {
-                imgRef.current.src = fail;
+                imgRef.current.src = fail || IMAGES.LOGO;
                 imgRef.current.onerror = null;
             }
         };
@@ -33,7 +33,7 @@ const Image: FC<ImageProps> = ({ pending, src, fail, className, ...other }) => {
     return (
         <img
             className={classnames('component-image', className)}
-            src={pending || IMAGES.CARD}
+            src={pending || IMAGES.LOGO}
             ref={imgRef}
             {...other}
         />

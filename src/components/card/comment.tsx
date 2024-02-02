@@ -3,6 +3,8 @@ import './index.scss';
 import classnames from 'classnames';
 import { Button, Input } from 'antd';
 import { HeartOutlined, StarOutlined, MessageOutlined } from '@ant-design/icons';
+import { connect } from 'react-redux';
+import Image from '../image';
 
 interface IProps {
     like: number;
@@ -30,6 +32,7 @@ const Comment = (props: IProps) => {
             ) : (
                 <div className='normal'>
                     <div className='left' onClick={handleVisible}>
+                        <Image className='img' src={props?.user.img}></Image>
                         说点什么...
                     </div>
                     <div className='right'>
@@ -51,4 +54,7 @@ const Comment = (props: IProps) => {
         </div>
     );
 };
-export default Comment;
+const mapStateToProps = (state: any) => ({
+    user: state.user,
+});
+export default connect(mapStateToProps)(Comment);
