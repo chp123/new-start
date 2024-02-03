@@ -4,14 +4,16 @@ import classnames from 'classnames';
 import { Button, Input } from 'antd';
 import { HeartOutlined, StarOutlined, MessageOutlined } from '@ant-design/icons';
 import { connect } from 'react-redux';
-import Image from '../image';
+import Image from '../../image';
 
 interface IProps {
     like: number;
+    comment: number;
+    collect: number;
 }
 
 const Comment = (props: IProps) => {
-    const { like } = props;
+    const { like, comment, collect } = props;
     const [visible, setVisible] = useState(false);
     const handleVisible = () => {
         setVisible(true);
@@ -42,11 +44,11 @@ const Comment = (props: IProps) => {
                         </div>
                         <div className='icon'>
                             <StarOutlined />
-                            <span>{like}</span>
+                            <span>{collect}</span>
                         </div>
                         <div className='icon' onClick={handleVisible}>
                             <MessageOutlined />
-                            <span>{like}</span>
+                            <span>{comment}</span>
                         </div>
                     </div>
                 </div>

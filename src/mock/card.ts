@@ -18,6 +18,9 @@ const data = () => {
             owner: Random.image('20x20', Random.color(), Random.color(), 'png', Random.word(5)),
             like: Random.integer(60, 100),
             time: Random.datetime('yyyy-MM-dd'),
+            addr: Random.province(),
+            comment: Random.integer(20, 30),
+            collect: Random.integer(10, 30),
         };
     }
     return arr;

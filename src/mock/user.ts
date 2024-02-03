@@ -6,6 +6,10 @@ Mock.mock('http://dev.com/login', 'get', {
         id: 100000,
         name: '甄嬛',
         img: IMAGES.USER,
+        addr: '湖北',
+        attention: 1,
+        fans: 10,
+        like: 100,
     },
     code: 200,
 });

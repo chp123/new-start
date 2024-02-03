@@ -16,6 +16,9 @@ const Head = (props: any) => {
             login();
         }
     };
+    const handleMy = () => {
+        location.href = '/single.html#/my';
+    };
     return (
         <div className={classnames('component-head', `theme-${theme.toString().toLowerCase()}`)}>
             <div
@@ -29,8 +32,8 @@ const Head = (props: any) => {
 
             <div className='right'>
                 <Theme></Theme>
-                {user.img && <img src={user.img} className='user'></img>}
-                <span onClick={handleLogin}>{user.id ? '登出' : '登陆'}</span>
+                {user.img && <img src={user.img} className='user' onClick={handleMy}></img>}
+                <span onClick={handleLogin}>{user.id ? '登出' : '登录'}</span>
             </div>
         </div>
     );

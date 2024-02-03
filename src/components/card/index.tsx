@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import './index.scss';
 import classnames from 'classnames';
-import { Button, Modal, Input } from 'antd';
-import { HeartOutlined, HeartTwoTone, StarOutlined, MessageOutlined } from '@ant-design/icons';
+import { Button, Modal } from 'antd';
+import { HeartOutlined } from '@ant-design/icons';
 import Image from '../image';
 import Comment from './comment';
+import CommentList from './comment-list';
+import { getRequest, IReponse } from '@src/request/index';
 
 interface IProps {
     img: string;
@@ -13,17 +15,26 @@ interface IProps {
     name: string;
     like: number;
     time: any;
+    [key: string]: any;
 }
 
 const Card = (props: IProps) => {
-    const { img, title, owner, name, like, time } = props;
+    const { img, title, owner, name, like, time, addr, comment, collect } = props;
     const [visible, setVisible] = useState(false);
+    const [commentList, setCommentList] = useState([]);
     let h = Math.random() * 100 + 200 + 'px';
     const handleDialog = () => {
+        getComment();
         setVisible(true);
     };
     const handleDialogClose = () => {
         setVisible(false);
+    };
+    const getComment = () => {
+        getRequest('/test/comment-list').then((res: IReponse) => {
+            setCommentList(res.data.list);
+            console.log(res);
+        });
     };
     return (
         <div className={classnames('component-card')}>
@@ -51,12 +62,18 @@ const Card = (props: IProps) => {
                         </div>
                         <Button>关注</Button>
                     </div>
-                    <div className='content'>
-                        <div className='title'>{title}</div>
-                        <div className='time'>{time}</div>
+                    <div className='scroll-block'>
+                        <div className='content'>
+                            <div className='title'>{title}</div>
+                            <div className='time'>{`${time} ${addr}`}</div>
+                        </div>
+                        <div className='list'>
+                            <CommentList comment={comment} data={commentList}/>
+                        </div>
                     </div>
+
                     <div className='footer'>
-                        <Comment like={like} />
+                        <Comment like={like} comment={comment} collect={collect} />
                     </div>
                 </div>
             </Modal>
