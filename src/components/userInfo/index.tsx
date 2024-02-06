@@ -11,7 +11,17 @@ const UserInfo = (props) => {
             <div className='info'>
                 <div className='name'>{user.name}</div>
                 <div className='account'>{`狗狗账号：${user.id} ｜ IP属地：${user.addr}`}</div>
-                <div className='data'></div>
+                <div className='data'>
+                    <span>
+                        <span className='num'>{user.attention}</span>关注
+                    </span>
+                    <span>
+                        <span className='num'>{user.fans}</span>粉丝
+                    </span>
+                    <span>
+                        <span className='num'>{user.like}</span>获赞
+                    </span>
+                </div>
             </div>
         </div>
     );

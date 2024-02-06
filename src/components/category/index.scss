@@ -14,6 +14,7 @@
         margin-right: 10px;
         @include flex-row();
         @include flex-center();
+        cursor: pointer;
     }
     .category-item-active{
         background: $menu_active_light;

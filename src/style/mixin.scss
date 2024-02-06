@@ -1,12 +1,17 @@
 @import './base.scss';
 @import './theme.scss';
 
-$navbarWidth: 100px;
+$navbarWidth: 140px;
 $headHeight: 80px;
 
 @mixin flex-row() {
     display: flex;
     flex-direction: row;
+}
+
+@mixin flex-column() {
+    display: flex;
+    flex-direction: column;
 }
 
 @mixin flex-column() {

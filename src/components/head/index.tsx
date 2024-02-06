@@ -5,17 +5,9 @@ import classnames from 'classnames';
 import Theme from '../theme';
 import IMAGES from '../../constants/imgs';
 import store from '@src/store';
-import { login, logout } from '@src/logic';
 
 const Head = (props: any) => {
     const { theme, user } = props;
-    const handleLogin = () => {
-        if (user.id) {
-            logout();
-        } else {
-            login();
-        }
-    };
     const handleMy = () => {
         location.href = '/single.html#/my';
     };
@@ -33,7 +25,6 @@ const Head = (props: any) => {
             <div className='right'>
                 <Theme></Theme>
                 {user.img && <img src={user.img} className='user' onClick={handleMy}></img>}
-                <span onClick={handleLogin}>{user.id ? '登出' : '登录'}</span>
             </div>
         </div>
     );

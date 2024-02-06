@@ -1,4 +1,8 @@
 @import '../../style/mixin.scss';
 
 .page-my {
+    .component-category{
+        @include flex-center();
+        margin-top: 20px;
+    }
 }

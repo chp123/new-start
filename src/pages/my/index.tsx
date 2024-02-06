@@ -8,12 +8,13 @@ import UserInfo from '@src/components/userInfo';
 
 const My = () => {
     let [curCatNo, setCurCatNo] = useState(1);
-    let [catData, setCatData] = useState([]);
+    let catData = [
+        { name: '笔记', catNo: 1 },
+        { name: '收藏', catNo: 2 },
+        { name: '点赞', catNo: 3 },
+    ];
     let [cardData, setCardData] = useState([]);
     let [loading, setLoading] = useState(false);
-    useEffect(() => {
-        getData1();
-    }, []);
     useEffect(() => {
         getData();
     }, [curCatNo]);
@@ -28,12 +29,6 @@ const My = () => {
             .catch(() => {
                 setLoading(false);
             });
-    };
-    const getData1 = () => {
-        getRequest('/test/category').then((res: IReponse) => {
-            console.log('===res===', res);
-            setCatData(res.data);
-        });
     };
     const handleChangeCategory = (data: any) => {
         setCurCatNo(data.catNo);
