@@ -4,6 +4,7 @@ import WaterFall from '@src/components/waterfall';
 import Category from '@src/components/category';
 import { getRequest, IReponse } from '@src/request/index';
 import Loading from '@src/components/loading';
+import '@src/mock';
 
 const Index = () => {
     let [curCatNo, setCurCatNo] = useState(1);

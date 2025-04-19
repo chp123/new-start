@@ -1,10 +1,10 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from '../../src/pages/app/index'
-const root = ReactDOM.createRoot(document.getElementById('root'))
-document.title = '首页'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from '../../src/pages/app/index';
+const root = ReactDOM.createRoot(document.getElementById('root'));
+document.title = '首页';
 root.render(
-  <React.StrictMode>
-    <App a={1} b={'qwe'} />
-  </React.StrictMode>
-)
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>,
+);

@@ -194,3 +194,11 @@ alias: {
 -   小红书瀑布流实现方案
 -   webpack打包引入某个文件到模版文件里
 -   图片加载过程的占位&懒加载
+
+
+
+## 新篇章
+做有意思的事，生活就是多体验，无限可能
+### 有意思的three
+文档：https://threejs.org/docs/index.html#manual/zh/introduction/Creating-a-scene
+
